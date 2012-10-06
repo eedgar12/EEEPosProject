@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package posproject;
 
-/**
- *
- * @author eedgar
+package posproject;
+/*
+ * Author: Emma Edgar
+ * 
  */
 public class Product {
     private DiscountStrategy discountStrategy = new NoDiscount();
@@ -14,7 +10,9 @@ public class Product {
     private double price = 00.00;
     private String id = "";
    
-
+    /*
+     * Constructor
+     */
     public Product(String id, String description, double price, DiscountStrategy discountStrategy) {
         this.discountStrategy = discountStrategy;
         this.id = id;
@@ -29,7 +27,6 @@ public class Product {
     public void setDiscountStrategy(DiscountStrategy discountStrategy) {
         this.discountStrategy = discountStrategy;
     }
-
 
     public String getDescription() {
         return description;
@@ -55,13 +52,13 @@ public class Product {
         this.id = id;
     }
     
+    /*
+     * Returns the discount percentage for the product
+     */
     public double getDiscountPercentage(){
         double discountPercentage = getDiscountStrategy().getDiscountPercentage();
-        
         return discountPercentage;
     }
-    
-    
     
     
 }

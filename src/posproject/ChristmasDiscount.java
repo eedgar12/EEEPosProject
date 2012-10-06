@@ -1,17 +1,18 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package posproject;
 
-/**
- *
- * @author Toshiba laptop
+package posproject;
+/*
+ * Author: Emma Edgar
+ * 
  */
 public class ChristmasDiscount implements DiscountStrategy{
-    private static final double DISC_PERCENTAGE = 0.10;
+    private final double DISCOUNT_PERCENTAGE = 0.10;
+    
+    /*
+     * Returns discount percentage
+     */
+    @Override
     public double getDiscountPercentage(){
-        return DISC_PERCENTAGE;
+        return DISCOUNT_PERCENTAGE;
     }
     
 }

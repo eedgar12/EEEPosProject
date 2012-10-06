@@ -1,31 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package posproject;
 
-/**
- *
- * @author eedgar
+package posproject;
+/*
+ * Author: Emma Edgar
+ * 
  */
 public class Customer {
     private String firstName = "";
     private String lastName = "";
     private String id;
-    private String streetAddress;
-    private String city;
-    private String state;
-    private String zip;
 
-    public Customer(String name, String id, String streetAddress, String city, String state, String zip) {
-        this.lastName = name;
-        this.id = id;
-        this.streetAddress = streetAddress;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-    }
-
+    /*
+     * Constructor
+     */
     public Customer(String id, String lastName, String firstName){
         this.id = id;
         this.lastName = lastName;
@@ -57,38 +43,4 @@ public class Customer {
         this.id = id;
     }
 
-    public String getStreetAddress() {
-        return streetAddress;
-    }
-
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getZip() {
-        return zip;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-    
-    
-    
 }
