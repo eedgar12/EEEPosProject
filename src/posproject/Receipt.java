@@ -4,6 +4,9 @@ import java.text.DecimalFormat;
 /*
  * Author: Emma Edgar
  * 
+ * The receipt class holds the customer information, and an aray of line items 
+ * (or products).  It adds a product to a line item, adds up the total for a line,
+ * and returns the totals for the receipt.
  */
 public class Receipt {
     private Customer customer;
@@ -14,29 +17,33 @@ public class Receipt {
      * Constructor
      */
     public Receipt(Customer customer) {
+        //needs validation
         this.customer = customer;
     }
 
-    public Customer getCustomer() {
+    public final Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public final void setCustomer(Customer customer) {
+        //needs validation
         this.customer = customer;
     }
 
-    public LineItem[] getLineItems() {
+    public final LineItem[] getLineItems() {
         return lineItems;
     }
 
-    public void setLineItems(LineItem[] lineItems) {
+    public final void setLineItems(LineItem[] lineItems) {
+        //needs validation
         this.lineItems = lineItems;
     }
     
     /*
      * Resizes array of LineItems and adds item to array
      */
-    private void addToArray(LineItem item){
+    private final void addToArray(LineItem item){
+        //needs validation
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
@@ -46,7 +53,8 @@ public class Receipt {
     /*
      * Sends new product to addToArray()
      */
-    public void addLineItem(Product product, int qty) {
+    public final void addLineItem(Product product, int qty) {
+        //needs validation
         LineItem item = new LineItem(product, qty);
         addToArray(item);
     }
@@ -54,7 +62,7 @@ public class Receipt {
     /*
      * Returns receipt string
      */
-    public String print(){
+    public final String print(){
         String receipt = (
                 (customer.getFirstName() + " " + customer.getLastName()) + "\n" +
                 ("---------------------------") + "\n" +
@@ -79,7 +87,7 @@ public class Receipt {
     /*
      * Returns the receipt total without the discounts calculated
      */
-    private double getTotalBeforeDiscount() {
+    private final double getTotalBeforeDiscount() {
         double grandTotal = 0.00;
         for(LineItem item : lineItems) {
             grandTotal += item.getOrigPriceSubtotal();
@@ -90,14 +98,14 @@ public class Receipt {
     /*
      * Returns the receipt total after the discount has been calculated
      */
-    private double getTotalAfterDiscount(){
+    private final double getTotalAfterDiscount(){
         return getTotalBeforeDiscount() - getDiscountAmount();
     }
     
     /*
      * Returns the total discount ammount
      */
-    private double getDiscountAmount(){
+    private final double getDiscountAmount(){
         double totalDiscount = 0.0;
         for (LineItem item : lineItems){
             totalDiscount += item.getAmountSavedSubtotal();

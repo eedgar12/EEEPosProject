@@ -3,6 +3,11 @@ package posproject;
 /*
  * Author: Emma Edgar
  * 
+ * The CashRegister class holds a receipt, an array of customers, and an array
+ * of products.  When a transaction is started, this class finds the specified
+ * customer and creates a new receipt object with that customer.  This class 
+ * can add a Product to the receipt, and print the receipt.
+ * 
  */
 public class CashRegister {
     private Receipt receipt;
@@ -24,7 +29,8 @@ public class CashRegister {
     /*
      * Add product to receipt
      */
-    public void addProduct(String productId, int qty){
+    public final void addProduct(String productId, int qty){
+        //needs validation
         Product product = null;
         for(Product p : products) {
             if(productId.equals(p.getId())) {
@@ -42,7 +48,8 @@ public class CashRegister {
     /*
      * Start the transaction
      */
-    public void startTransaction(String customerId){
+    public final void startTransaction(String customerId){
+        //needs validation
         //search for customer
         Customer customer = null;
         for(Customer c : customers) {
@@ -61,7 +68,7 @@ public class CashRegister {
     /*
      * Print out the receipt
      */
-    public void printReceipt(){
+    public final void printReceipt(){
         System.out.println(receipt.print());
     }
     

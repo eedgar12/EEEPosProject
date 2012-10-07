@@ -3,6 +3,8 @@ package posproject;
 /*
  * Author: Emma Edgar
  * 
+ * The Customer class holds customer information: firstName, lastName, and ID.
+ * 
  */
 public class Customer {
     private String firstName = "";
@@ -13,33 +15,37 @@ public class Customer {
      * Constructor
      */
     public Customer(String id, String lastName, String firstName){
+        //needs validation
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
     }
     
     
-    public String getLastName() {
+    public final String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public final void setLastName(String lastName) {
+        //needs validation
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
+    public final String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public final void setFirstName(String firstName) {
+        //needs validation
         this.firstName = firstName;
     }
 
-    public String getId() {
+    public final String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public final void setId(String id) {
+        //needs validation
         this.id = id;
     }
 

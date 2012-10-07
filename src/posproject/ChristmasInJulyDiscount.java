@@ -3,6 +3,8 @@ package posproject;
 /*
  * Author: Emma Edgar
  * 
+ * The ChristmasInJulyDiscount class implements the DiscountStrategy interface.  It
+ * holds the discount percentage and returns its value.
  */
 public class ChristmasInJulyDiscount implements DiscountStrategy{
     private final double DISCOUNT_PERCENTAGE = .12;
@@ -11,7 +13,7 @@ public class ChristmasInJulyDiscount implements DiscountStrategy{
      * Returns discount percentage
      */
     @Override
-    public double getDiscountPercentage(){
+    public final double getDiscountPercentage(){
         return DISCOUNT_PERCENTAGE;
     }
     

@@ -3,6 +3,9 @@ package posproject;
 /*
  * Author: Emma Edgar
  * 
+ * The LineItem class holds a product and a quantity for each line.  It also
+ * returns the total price of the line without the discount, and it returns the
+ * amount saved for the line based on the product's discount strategy.
  */
 public class LineItem {
     private Product product;
@@ -12,37 +15,40 @@ public class LineItem {
      * Constructor
      */
     public LineItem(Product product, int qty) {
+        //needs validation
         this.product = product;
         this.qty = qty;
     }
 
-    public Product getProduct() {
+    public final Product getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public final void setProduct(Product product) {
+        //needs validation
         this.product = product;
     }
 
-    public int getQty() {
+    public final int getQty() {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public final void setQty(int qty) {
+        //needs validation
         this.qty = qty;
     }
     
     /*
      * Returns the line total
      */
-    public double getOrigPriceSubtotal(){
+    public final double getOrigPriceSubtotal(){
         return qty * product.getPrice();
     }
     
     /*
      * Returns the amount saved per line
      */
-    public double getAmountSavedSubtotal(){
+    public final double getAmountSavedSubtotal(){
         return getOrigPriceSubtotal() * product.getDiscountPercentage();
     }
     
